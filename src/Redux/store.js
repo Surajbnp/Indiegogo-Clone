@@ -1,14 +1,14 @@
-import {  combineReducers, compose, legacy_createStore, applyMiddleware } from "redux";
-import { reducer } from "../Redux/Auth/reducer";
-
+import { combineReducers, legacy_createStore, compose, applyMiddleware } from "redux"; 
 import thunk from "redux-thunk";
+import { appReducer } from "./AppReducer/appReducer";
+import { authReducer } from "./AuthReducer/authReducer"; 
+
 const rootReducer = combineReducers({
-  auth: reducer,
-});
+    appReducer, 
+    authReducer
+}) 
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; 
 
-const composeEnhancers = (typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
-export const store = legacy_createStore(rootReducer
-  , composeEnhancers(
-  applyMiddleware(thunk))
-  );
+export const store = legacy_createStore(rootReducer, composeEnhancers (applyMiddleware( thunk )))
+
