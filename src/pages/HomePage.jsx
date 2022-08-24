@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, color, Flex, Image, Text } from "@chakra-ui/react";
 import "../App.css";
 
+
 const HomePage = () => {
+
   const [counter, setCounter] = useState(0);
 
   const craouselData = [
@@ -123,6 +125,7 @@ const HomePage = () => {
       </Box>
     </Box>
   );
+
 };
 
 export default HomePage;
