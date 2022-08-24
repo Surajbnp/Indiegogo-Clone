@@ -1,0 +1,151 @@
+
+.nav1{
+  border: 2px solid red;
+}
+.nav {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .div1 {
+    margin-left: 20px;
+  }
+  .div2 {
+    margin-right: 15px;
+  }
+  .logo {
+    font-weight: 1000;
+    font-size: 22px;
+    text-decoration: none;
+    color: #E51075;
+  }
+  .navitemleft {
+    font-size: 17px;
+    text-decoration: none;
+    color: #000000;
+    padding-left: 20px;
+  }
+  .navitemright {
+    font-size: 17px;
+    text-decoration: none;
+    color: #000000;
+    padding-right: 20px;
+  }
+  .navitemright1 {
+    font-size: 17px;
+    text-decoration: none;
+    color: #000000;
+    padding-right: 25px;
+  }
+  
+  .navitemleft:hover {
+    color: #E51075;
+  }
+  .navitemright:hover {
+    color: #E51075;
+  }
+  .navitemright1:hover {
+    color: #E51075;
+  }
+  .search {
+    color: #000000;
+  }
+  .line {
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+  }
+  /*dropdown*/
+  .drop1 {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    width: 100%;
+    background-color: #fff;
+  }
+  .drop2 {
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+    width: 100%;
+    background-color: #F5F5F5;
+    padding:0px 20px;
+  }
+  .img1 {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  .img2 {
+    width: 170px;
+  }
+  .img3 {
+    width: 170px;
+  }
+  .img4 {
+    width: 130px;
+  }
+  .img5 {
+    width: 140px;
+  }
+  .p21 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  .row1 {
+    display: flex;
+    column-gap: 30px;
+    margin-top: 30px;
+  }
+  .row2 {
+    display: flex;
+    column-gap: 30px;
+    margin-top: 30px;
+  }
+  .row3{
+    text-align: start;
+  }
+  .row1p {
+    position: absolute;
+    margin-top: 15px;
+    height: 20px;
+  }
+  .col11 {
+    margin-top: 50px;
+    text-align: start;
+  }
+  .col21 {
+    margin-top: 50px;
+    text-align: start;
+  }
+  .row2p {
+    height: 20px;
+    margin-top: 15px;
+    position: absolute;
+  }
+  .col12 {
+    margin-top: 50px;
+    text-align: start;
+  }
+  .col22 {
+    margin-top: 50px;
+    text-align: start;
+  }
+  .row3p {
+    margin-top: 44px;
+    margin-bottom: 20px;
+    text-align: start;
+  }
+  .customlink {
+    position: relative;
+    color: #484848;
+    text-decoration: none;
+  }
+  .customlink1 {
+    position: relative;
+    color: #484848;
+    text-decoration: none;
+    font-size:18px;
+  }
