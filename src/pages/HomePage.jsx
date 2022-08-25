@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, color, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import "../App.css";
 
-
 const HomePage = () => {
-
   const [counter, setCounter] = useState(0);
 
   const craouselData = [
@@ -38,11 +36,19 @@ const HomePage = () => {
   ];
 
   const nextImage = () => {
-    setCounter(prev => prev + 1)
+    if (counter === craouselData.length - 1) {
+      setCounter(-1);
+    }
+
+    setCounter((prev) => prev + 1);
   };
 
   const prevImage = () => {
-    setCounter(prev => prev - 1)
+    if (counter === 0) {
+      setCounter(4);
+    }
+
+    setCounter((prev) => prev - 1);
   };
 
   useEffect(() => {
@@ -98,7 +104,6 @@ const HomePage = () => {
             bg={"transparent"}
             _hover={{ color: "black", bg: "white" }}
             onClick={prevImage}
-            
           >
             {"<"}
           </Button>
@@ -112,20 +117,17 @@ const HomePage = () => {
             bg="transparent"
             _hover={{ color: "black", bg: "white" }}
             onClick={nextImage}
-          
           >
             {">"}
           </Button>
 
-          <Text
-            fontWeight={600}
-            m={"auto"}
-          >{`${counter} / ${craouselData.length}`}</Text>
+          <Text fontWeight={600} m={"auto"}>{`${counter + 1} / ${
+            craouselData.length
+          }`}</Text>
         </Flex>
       </Box>
     </Box>
   );
-
 };
 
 export default HomePage;
