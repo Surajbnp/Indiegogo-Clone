@@ -5,7 +5,6 @@ import {
   Text,
   Heading,
   HStack,
-  Container,
   Button,
   Center,
   IconButton,
@@ -15,6 +14,7 @@ import {
   Tab,
   TabPanels,
   TabPanel,
+  Spacer,
 } from "@chakra-ui/react";
 import { Progress } from "@chakra-ui/react";
 import React from "react";
@@ -26,39 +26,113 @@ import {
 } from "react-icons/fa";
 import FAQ from "../components/FAQ";
 import Perk from "../components/Perk";
+import styles from "./CssFolder/SinglePage.module.css";
 
+// import React, { useEffect } from "react";
+// import { useParams } from "react-router-dom";
+// import { useDispatch, useSelector } from "react-redux";
+// import { getAudioProjectData } from "../Redux/AppReducer/actions";
 
 const SinglePage = () => {
+  // const { productId } = useParams();
+  // let product = useSelector((state) => state.product);
+  // const {
+  //   cover,
+  //   image1,
+  //   image2,
+  //   image3,
+  //   image4,
+  //   image5,
+  //   description1,
+  //   description2,
+  //   description3,
+  //   description4,
+  //   category,
+  //   title,
+  //   features,
+  //   status,
+  //   tag,
+  //   companyPic,
+  //   companyName,
+  //   companyAddress,
+  //   fund,
+  //   backers,
+  //   percentage,
+  //   daysLeft,
+  // } = product;
+
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   if (productId && productId !== "") dispatch(getAudioProjectData(productId));
+  //   return () => {
+  //     dispatch(getAudioProjectData());
+  //   };
+  // }, [productId]);
+
   return (
-    <Container maxWidth="container.lg" padding={10}>
-      <Box>
+    <div className={styles.cont}>
+      <Box className={styles.topBox}>
         <Flex>
-          <VStack>
-            <Image src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_273,w_273/ouzizrggdsrsrpuion5i.jpg"></Image>
+          <VStack className={styles.topStack}>
+            <Image
+              className={styles.img}
+              src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_273,w_273/ouzizrggdsrsrpuion5i.jpg"
+            ></Image>
           </VStack>
           <VStack align="flex-start" px={10}>
-            <Text>category</Text>
-            <Heading>title</Heading>
-            <Text>features</Text>
+            <Text color="#088366" fontSize={18} fontWeight={600}>
+              category
+            </Text>
+            <Heading fontWeight={600}>title</Heading>
+            <Text fontSize={25} fontWeight={400}>
+              features
+            </Text>
             <HStack>
-              <Image src="https://c2.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,w_40,g_center,q_auto:best,dpr_1.3,f_auto,h_40/qkxbv9745ls5btkj0ncp"></Image>
+              <Box className={styles.logo}>
+                <Image
+                  className={styles.img}
+                  src="https://c2.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,w_40,g_center,q_auto:best,dpr_1.3,f_auto,h_40/qkxbv9745ls5btkj0ncp"
+                ></Image>
+              </Box>
               <VStack>
-                <Text>companyName</Text>
-                <Text>companyAddress</Text>
+                <Text fontSize={17} fontWeight={500}>
+                  companyName
+                </Text>
+                <Text fontSize={17} fontWeight={400}>
+                  companyAddress
+                </Text>
               </VStack>
             </HStack>
             <HStack>
-              <Text>fund</Text>
-              <Text>backers</Text>
+              <span>
+                <Text fontSize={20} fontWeight={700}>
+                  fund
+                </Text>
+              </span>
+              <span>
+                <Text fontSize={17} fontWeight={400}>
+                  INR
+                </Text>
+              </span>
+              <Spacer />
+
+              <Text fontSize={17} fontWeight={400}>
+                backers
+              </Text>
             </HStack>
-            <Progress colorScheme="green" size="sm" value={20} />
+            <Progress colorScheme="green" size="sm" value={80} />
             <HStack>
-              <Text>percentage</Text>
-              <Text>daysLeft</Text>
+              <Text fontSize={17} fontWeight={400}>
+                percentage
+              </Text>
+              <Text fontSize={17} fontWeight={400}>
+                daysLeft
+              </Text>
             </HStack>
             <Flex>
               <HStack>
-                <Perk/>
+                <Perk />
                 <Button variant={"outline"} leftIcon={<FaRegHeart />}>
                   <Center>
                     <Text>FOLLOW</Text>
@@ -66,18 +140,21 @@ const SinglePage = () => {
                 </Button>
               </HStack>
               <HStack>
-                <IconButton icon={<FaFacebookSquare />}></IconButton>
-                <IconButton icon={<FaTwitter />}></IconButton>
-                <IconButton icon={<FaLink />}></IconButton>
+                <IconButton
+                  variant={"link"}
+                  icon={<FaFacebookSquare />}
+                ></IconButton>
+                <IconButton variant={"link"} icon={<FaTwitter />}></IconButton>
+                <IconButton variant={"link"} icon={<FaLink />}></IconButton>
               </HStack>
             </Flex>
           </VStack>
         </Flex>
       </Box>
-      <Box>
+      <Box className={styles.topBox}>
         <Flex>
-          <VStack>
-            <Tabs>
+          <VStack className={styles.bottomStack}>
+            <Tabs align="Start">
               <TabList>
                 <Tab>STORY</Tab>
                 <Tab>FAQ</Tab>
@@ -87,29 +164,75 @@ const SinglePage = () => {
 
               <TabPanels>
                 <TabPanel>
-                  <Image></Image>
+                  <Box className={styles.imgBox}>
+                    <Image className={styles.img}></Image>
+                  </Box>
+
                   <Text>Description1</Text>
-                  <Image></Image>
+                  <Box className={styles.imgBox}>
+                    <Image className={styles.img}></Image>
+                  </Box>
                   <Text>Description2</Text>
-                  <Image></Image>
+                  <Box className={styles.imgBox}>
+                    <Image className={styles.img}></Image>
+                  </Box>
                   <Text>Description3</Text>
-                  <Image></Image>
+                  <Box className={styles.imgBox}>
+                    <Image className={styles.img}></Image>
+                  </Box>
                   <Text>Description4</Text>
-                  <Image></Image>
                 </TabPanel>
                 <TabPanel>
-                  <FAQ/>
+                  <FAQ />
                 </TabPanel>
-                <TabPanel>
-                  <p>three!</p>
-                </TabPanel>
+                <TabPanel></TabPanel>
               </TabPanels>
             </Tabs>
           </VStack>
+          <VStack className={styles.perkStack}>
+            <Box>
+              <VStack>
+                <Box className={styles.imgBox1}>
+                  <Image className={styles.img}></Image>
+                </Box>
+                <Text>1 X</Text>
+                <Text>Price</Text>
+                <Text>Estimated Shipping</Text>
+                <Text>November 2022</Text>
+                <Text>Ships WorldWide</Text>
+              </VStack>
+            </Box>
+
+            <Box>
+              <VStack>
+                <Box className={styles.imgBox1}>
+                  <Image className={styles.img}></Image>
+                </Box>
+                <Text>2 X</Text>
+                <Text>Price</Text>
+                <Text>Estimated Shipping</Text>
+                <Text>November 2022</Text>
+                <Text>Ships WorldWide</Text>
+              </VStack>
+            </Box>
+
+            <Box>
+              <VStack>
+                <Box className={styles.imgBox1}>
+                  <Image className={styles.img}></Image>
+                </Box>
+                <Text>4 X</Text>
+                <Text>Price</Text>
+                <Text>Estimated Shipping</Text>
+                <Text>November 2022</Text>
+                <Text>Ships WorldWide</Text>
+              </VStack>
+            </Box>
+          </VStack>
         </Flex>
       </Box>
-    </Container>
+    </div>
   );
 };
 
- export default SinglePage
+export default SinglePage;
