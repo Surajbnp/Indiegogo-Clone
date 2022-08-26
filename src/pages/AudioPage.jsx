@@ -10,7 +10,6 @@ import {
   Image
  } from '@chakra-ui/react'
 import { Progress } from '@chakra-ui/react'
-import { Radio } from '@chakra-ui/react'
 
 import { BiSearch } from 'react-icons/bi'
 import { AiOutlineHeart, AiTwotoneFire } from "react-icons/ai"
@@ -18,7 +17,7 @@ import { MdWatchLater } from "react-icons/md"
 
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getAudioProjectData } from '../Redux/AppReducer/actions'
+import { filterAudioData, getAudioProjectData, sortAudioData } from '../Redux/AppReducer/actions'
 import style from "./CssFolder/audio.module.css"
 import AccordionComponent from '../components/AccordionComponent'
 import { Link } from 'react-router-dom'
@@ -26,10 +25,33 @@ import { Link } from 'react-router-dom'
 const AudioPage = () => { 
 
    const audioData = useSelector((state)=>state.appReducer.audioProjects)
-   const loading = useSelector((state)=>state.appReducer.isLoading)
+   
    const dispatch = useDispatch() 
 
    console.log(audioData)
+
+
+   const handleFilterAudio = (e) =>{ 
+       
+       let value = e.target.value 
+        
+
+       if(value === "All")
+       {
+        dispatch(getAudioProjectData())
+       }
+       else{
+           console.log("from filter", value)
+          dispatch(filterAudioData(value))
+       }
+   }
+
+   const handleSort = (e) =>{ 
+
+    let value = e.target.value 
+    console.log(value) 
+    dispatch(sortAudioData(value))
+   }
 
    useEffect(()=>{
        if(audioData.length === 0 ){
@@ -51,24 +73,23 @@ const AudioPage = () => {
                 <AccordionComponent/>
                 <h1>PROJECT TIMING</h1>
                 <hr />
-                <Box className={style.RadioFilterDiv}>
-                    <Stack defaultValue={"All"} direction="column" gap={"20px"}>
-                      
-                          <Radio size='lg'  value={"All"} colorScheme='blackAlpha'>
-                            All
-                          </Radio>
-                          <Radio size='lg'  value={"Launching soon"} colorScheme='blackAlpha'>     
-                            Launching soon
-                          </Radio>
-                          <Radio size='lg' name='1' value={"Just launched"} colorScheme='blackAlpha' >
-                            Just launched
-                          </Radio>
-                     
-                    </Stack>
-                </Box>
+                <div className={style.RadioFilterDiv} onChange = {handleFilterAudio}>
+                          <div>
+                              <input type={"radio"} value="All" name='a'/>
+                              <label>All</label>
+                          </div>
+                          <div>
+                              <input type={"radio"} value="Launching soon" name='a' />
+                              <label>Launching soon</label>
+                          </div>
+                          <div>
+                              <input type={"radio"} value="Just Launched" name='a'/>
+                              <label>Just Launched</label>
+                          </div>      
+                </div>
              </div>
              <div  className={style.AudioMainDivSMR}>
-                 <Box mt={"50px"}>
+                 <Box mt={"50px"} className={style.SearchBarDiv}>
                      <Stack>
                      <InputGroup>
                           <InputLeftElement
@@ -82,19 +103,24 @@ const AudioPage = () => {
                  <hr className={style.LineAfterInputSMR}/>
                  <Box mt={"40px"} mb="20px">
                      <Flex justifyContent={"end"} gap="10px" alignItems={"center"}>
-                          <Box>
-                             <Text>Sort by</Text>
+                          <Box className={style.filterDivRightSmr}>
+                             <Select w={"120px"} borderRadius="0" onChange={handleFilterAudio}>
+                                <option value='All'>All</option> 
+                                <option value='Launching soon'>Launching soon</option>
+                                <option value='Just Launched'>Just Launched</option>
+                              </Select>
                           </Box>
                           <Box>
-                              <Select w={"120px"} borderRadius="0">
-                                <option value='Trending'>Trending</option>
-                                <option value='Most Funded'>Most Funded</option>
+                              <Select w={"120px"} borderRadius="0" onChange={handleSort}>
+                                <option value=''>Sort by</option> 
+                                <option value='asc'>Trending</option>
+                                <option value='desc'>Most Funded</option>
                               </Select>
                           </Box>   
                      </Flex>
                  </Box>
                  <Box className={style.audioProjectDivsSMR}>
-                        { loading && <div><img src="https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-7.jpg" alt="sas" /></div>}
+                        
                        {   
                            audioData.length > 0 && 
 
