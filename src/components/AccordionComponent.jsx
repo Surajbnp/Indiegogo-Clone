@@ -7,11 +7,13 @@ import {
     AccordionPanel,
     AccordionIcon,
     Box
-  } from '@chakra-ui/react'
+  } from '@chakra-ui/react' 
+
+  import style from "../pages/CssFolder/audio.module.css"
 
 const AccordionComponent = () => {
   return (
-    <div>
+    <div className={style.AccordianComp}>
         <Accordion allowToggle  defaultIndex={0}>
                 <AccordionItem>
                     <h2>
