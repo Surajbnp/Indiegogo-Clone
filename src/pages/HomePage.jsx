@@ -40,7 +40,7 @@ const HomePage = () => {
 
       setCounter((prev) => prev + 1);
       setCounter2((prev) => prev + 1);
-    }, 3000);
+    }, 2500);
 
     return () => {
       clearInterval(interval);
@@ -156,7 +156,7 @@ const HomePage = () => {
 
         {/* Project div Started  */}
 
-        <Box mt="50px">
+        <Box mt="50px" w="100%" display="flex" justifyContent="space-between">
           <Text
             fontFamily="ff-more-web-pro,serif"
             fontSize="3xl"
@@ -164,6 +164,36 @@ const HomePage = () => {
           >
             Popular Projects
           </Text>
+          <Flex gap={"10px"} textAlign={"center"}>
+            <Button
+              fontSize={"22px"}
+              borderRadius={"50%"}
+              h="40px"
+              w="40px"
+              fontWeight={700}
+              border="1px solid grey"
+              bg={"black"}
+              color="white"
+              _hover={{ color: "black", bg: "white" }}
+              onClick={prevImage}
+            >
+              {"<"}
+            </Button>
+            <Button
+              borderRadius={"50%"}
+              fontSize={"22px"}
+              fontWeight={700}
+              h="40px"
+              w="40px"
+              border="1px solid grey"
+              bg={"black"}
+              color="white"
+              _hover={{ color: "black", bg: "white" }}
+              onClick={nextImage}
+            >
+              {">"}
+            </Button>
+          </Flex>
         </Box>
 
         <Flex
@@ -185,14 +215,14 @@ const HomePage = () => {
 
         <Box mt={20} fontFamily="ff-more-web-pro,serif" fontWeight={550}>
           <Flex justifyContent="space-between">
-            <Box w="48%" h="60vh">
+            <Box w="48%" h="60vh" className="hover1">
               <Image src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1658766588/eqiz3atyhohhduuwercg.jpg" />
               <Flex justifyContent="space-between" mt={2}>
                 <Text>Our roundup of standout projects</Text>
                 <Text>{"SEE COLLECTION >"}</Text>
               </Flex>
             </Box>
-            <Box w="48%" h="60vh">
+            <Box w="48%" h="60vh" className="hover1">
               <Image src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1659985896/hugs8qpmkxx1uvwalnz4.jpg" />
               <Flex justifyContent="space-between" mt={2}>
                 <Text>Our roundup of standout projectsTechoss S4200</Text>
@@ -202,7 +232,7 @@ const HomePage = () => {
           </Flex>
 
           <Flex justifyContent="space-between" mt={10}>
-            <Box w="48%" h="60vh">
+            <Box w="48%" h="60vh" className="hover1">
               <Image
                 h="100%"
                 w="100%"
@@ -213,7 +243,7 @@ const HomePage = () => {
                 <Text>{"SEE COLLECTION >"}</Text>
               </Flex>
             </Box>
-            <Box w="48%" h="60vh">
+            <Box w="48%" h="60vh" className="hover1">
               <Image
                 h="100%"
                 w="100%"
@@ -375,7 +405,7 @@ const HomePage = () => {
           <Text fontSize={"4xl"} fontFamily="ff-more-web-pro,serif">
             Clever Things For Curious Humans™
           </Text>
-          <Text w='60%' margin='auto'>
+          <Text w="60%" margin="auto">
             There’s no better place to start the hunt for something new and
             special. Begin on Indiegogo to find clever and unconventional things
             that solve everyday problems large and small.
