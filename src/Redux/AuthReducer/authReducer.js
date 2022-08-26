@@ -1,13 +1,50 @@
+import * as types from "./actionTypes";
 
 const initState = {
     isAuth : false,
     userInfo : {},
     isLoading : false,
-    isError : false 
+    isError : false ,
+   
 } 
 
-export const authReducer = (state = initState, { type, payload }) =>{
+const authReducer = (state = initState, action) =>{
+    const  { type, payload }=action
      switch (type){
-         default : return state
-     }
-}
+        
+            case types.REGISTER_REQUEST:{
+              return { ...state, isLoading: true };
+            }
+        
+            case types.REGISTER_SUCCESS:{
+              return { ...state, isLoading: false , userInfo:payload};
+            }
+            case types.REGISTER_FAILURE:{
+              return { ...state, isLoading: false, isError: true };}
+        
+            case types.LOGIN_REQUEST:{
+              return { ...state, isLoading: true };}
+
+
+            case types.LOGIN_SUCCESS:{
+          
+              return { ...state, isLoading: false, isAuth: true, userInfo: payload };
+            }
+            case types.LOGIN_FAILURE:{
+              return {
+                ...state,
+                isLoading: false,
+                isError: true,
+                isAuth: false,
+            
+              };
+            }
+            
+            default:
+              return state;
+          }
+        };
+        
+        export { authReducer };
+
+
