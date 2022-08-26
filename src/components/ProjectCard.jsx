@@ -3,10 +3,11 @@ import { Box, Flex } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { BsFillClockFill } from 'react-icons/bs';
+import "../App.css";
 
 const ProjectCard = ({ projectData, counter }) => {
   return (
-    <Box w='100%' border='1px solid grey' h='90vh'>
+    <Box w='100%' border='1px solid grey' h='90vh' className="hover">
       <Image src={projectData[counter].img} w='100%' h='45vh'/>
 
       <Box p={4} textAlign='start' h='27vh'>

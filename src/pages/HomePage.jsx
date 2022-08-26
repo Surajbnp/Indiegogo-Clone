@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import "../App.css";
 import ProjectCard from "../components/ProjectCard";
+import { FaHome, FaMobileAlt, FaShoppingBag } from "react-icons/fa";
+import { BsEmojiHeartEyesFill } from "react-icons/bs";
+import { SiAudiomack } from "react-icons/si";
+import { GiFilmProjector } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const [counter, setCounter] = useState(0);
   const [counter2, setCounter2] = useState(0);
-
-  
+  const navigate = useNavigate();
 
   const nextImage = () => {
     if (counter === craouselData.length - 1) {
@@ -36,7 +40,7 @@ const HomePage = () => {
 
       setCounter((prev) => prev + 1);
       setCounter2((prev) => prev + 1);
-    }, 3000);
+    }, 2500);
 
     return () => {
       clearInterval(interval);
@@ -128,7 +132,11 @@ const HomePage = () => {
               fontWeight={700}
               fontSize={12}
               color="white"
-              _hover={{ color: "black", bg: "white", border: "0.5px solid grey" }}
+              _hover={{
+                color: "black",
+                bg: "white",
+                border: "0.5px solid grey",
+              }}
             >
               SIGN UP NOW
             </Button>
@@ -148,7 +156,7 @@ const HomePage = () => {
 
         {/* Project div Started  */}
 
-        <Box mt="50px">
+        <Box mt="50px" w="100%" display="flex" justifyContent="space-between">
           <Text
             fontFamily="ff-more-web-pro,serif"
             fontSize="3xl"
@@ -156,6 +164,36 @@ const HomePage = () => {
           >
             Popular Projects
           </Text>
+          <Flex gap={"10px"} textAlign={"center"}>
+            <Button
+              fontSize={"22px"}
+              borderRadius={"50%"}
+              h="40px"
+              w="40px"
+              fontWeight={700}
+              border="1px solid grey"
+              bg={"black"}
+              color="white"
+              _hover={{ color: "black", bg: "white" }}
+              onClick={prevImage}
+            >
+              {"<"}
+            </Button>
+            <Button
+              borderRadius={"50%"}
+              fontSize={"22px"}
+              fontWeight={700}
+              h="40px"
+              w="40px"
+              border="1px solid grey"
+              bg={"black"}
+              color="white"
+              _hover={{ color: "black", bg: "white" }}
+              onClick={nextImage}
+            >
+              {">"}
+            </Button>
+          </Flex>
         </Box>
 
         <Flex
@@ -170,6 +208,237 @@ const HomePage = () => {
           <ProjectCard projectData={projectData} counter={counter + 2} />
           <ProjectCard projectData={projectData} counter={counter + 3} />
         </Flex>
+
+        {/* Project div ended */}
+
+        {/* Card Collction Strted */}
+
+        <Box mt={20} fontFamily="ff-more-web-pro,serif" fontWeight={550}>
+          <Flex justifyContent="space-between">
+            <Box w="48%" h="60vh" className="hover1">
+              <Image src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1658766588/eqiz3atyhohhduuwercg.jpg" />
+              <Flex justifyContent="space-between" mt={2}>
+                <Text>Our roundup of standout projects</Text>
+                <Text>{"SEE COLLECTION >"}</Text>
+              </Flex>
+            </Box>
+            <Box w="48%" h="60vh" className="hover1">
+              <Image src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1659985896/hugs8qpmkxx1uvwalnz4.jpg" />
+              <Flex justifyContent="space-between" mt={2}>
+                <Text>Our roundup of standout projectsTechoss S4200</Text>
+                <Text>{"SEE COLLECTION >"}</Text>
+              </Flex>
+            </Box>
+          </Flex>
+
+          <Flex justifyContent="space-between" mt={10}>
+            <Box w="48%" h="60vh" className="hover1">
+              <Image
+                h="100%"
+                w="100%"
+                src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1660843743/it25dnypbcnfyodgrk7i.jpg"
+              />
+              <Flex justifyContent="space-between" mt={2}>
+                <Text>Check out these innovative steals</Text>
+                <Text>{"SEE COLLECTION >"}</Text>
+              </Flex>
+            </Box>
+            <Box w="48%" h="60vh" className="hover1">
+              <Image
+                h="100%"
+                w="100%"
+                src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1655332492/xmwmdtjfvyy2mbbre4qo.png"
+              />
+              <Flex justifyContent="space-between" mt={2}>
+                <Text>Our roundup of standout projectsTechoss S4200</Text>
+                <Text>{"SEE COLLECTION >"}</Text>
+              </Flex>
+            </Box>
+          </Flex>
+        </Box>
+
+        {/* Card Collection ended */}
+
+        {/* about div started  */}
+
+        <Box
+          border="1px solid grey"
+          h="60vh"
+          mt={20}
+          bgImage="https://c0.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fit,w_auto,g_center,q_auto:best,dpr_1.5,f_auto/homepage/cf-bg-desktop-lg.jpg"
+        >
+          <Text fontFamily="ff-more-web-pro,serif" fontSize="4xl" mt={20}>
+            Back the project, take the ride
+          </Text>
+          <Text w="50%" margin="auto" pt={5} textAlign="start">
+            Indiegogo is your destination for clever innovations in tech,
+            design, and more, often with special perks and pricing for early
+            adopters. Back a campaign, share your ideas and feedback with the
+            project team - and join the risks and rewards of bringing new
+            products to life.
+          </Text>
+        </Box>
+
+        {/* about div ended */}
+
+        {/* Category div started */}
+        <Box mt={10}>
+          <Text fontSize={"4xl"} fontFamily="ff-more-web-pro,serif">
+            Which categories interest you?
+          </Text>
+          <Text>
+            Discover projects just for you and get great recommendations when
+            you select your interests.
+          </Text>
+          <Box mt="30px">
+            <Button
+              color={"grey"}
+              borderRadius="none"
+              bg="none"
+              fontWeight={400}
+              border={"1px solid black"}
+            >
+              SIGN UP AND SELECT INTERSTS
+            </Button>
+          </Box>
+        </Box>
+
+        {/* category image div */}
+
+        <Flex className="catImg">
+          <Box fontSize="13px">
+            <FaHome color="#e51075" size={60} />
+            <Text mt={3}>Home</Text>
+          </Box>
+
+          <Box fontSize="13px">
+            <FaMobileAlt color="#e51075" size={60} />
+            <Text mt={3}>PHONES & ACCESSORIES</Text>
+          </Box>
+
+          <Box fontSize="13px">
+            <FaShoppingBag color="#e51075" size={60} />
+            <Text mt={3}>TRAVELL</Text>
+          </Box>
+
+          <Box fontSize="13px">
+            <BsEmojiHeartEyesFill color="#e51075" size={60} />
+            <Text mt={3}>HEALTH</Text>
+          </Box>
+
+          <Box fontSize="13px" onClick={() => navigate("/audio")}>
+            <SiAudiomack color="#e51075" size={60} />
+            <Text mt={3}>AUDIO</Text>
+          </Box>
+
+          <Box fontSize="13px">
+            <GiFilmProjector color="#e51075" size={70} />
+            <Text mt={3}>FILM</Text>
+          </Box>
+        </Flex>
+
+        {/* category div ennded */}
+
+        {/* review section  */}
+
+        <Box mt={10}>
+          <Text fontSize={"4xl"} fontFamily="ff-more-web-pro,serif">
+            From the Indiegogo Review
+          </Text>
+          <Text>
+            Your behind-the-scenes view of the people and stories behind
+            Indiegogo projects
+          </Text>
+        </Box>
+
+        <Flex className="review">
+          <Box>
+            <Image src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1660231108/h3ayekkkolooq5k9ilvq.png" />
+            <Box textAlign="start" mt={5}>
+              <Text fontFamily="ff-more-web-pro,serif" fontWeight={700}>
+                Indiegogo and StartEngine Join Forces
+              </Text>
+              <Text fontWeight={300}>
+                How to raise more funds after your campaign
+              </Text>
+              <Text fontWeight={600} mt={3}>
+                {"LEARN MORE>"}{" "}
+              </Text>
+            </Box>
+          </Box>
+
+          <Box>
+            <Image src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1660454271/xq8oqua1iie8y5abbxoi.png" />
+            <Box textAlign="start" mt={5}>
+              <Text fontFamily="ff-more-web-pro,serif" fontWeight={700}>
+                Indiegogo and StartEngine Join Forces
+              </Text>
+              <Text fontWeight={300}>
+                How to raise more funds after your campaign
+              </Text>
+              <Text fontWeight={600} mt={3}>
+                {"LEARN MORE>"}{" "}
+              </Text>
+            </Box>
+          </Box>
+
+          <Box>
+            <Image src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1660288199/ak5wz5zhr0ghiwwravay.png" />
+            <Box textAlign="start" mt={5}>
+              <Text fontFamily="ff-more-web-pro,serif" fontWeight={700}>
+                Indiegogo and StartEngine Join Forces
+              </Text>
+              <Text fontWeight={300}>
+                How to raise more funds after your campaign
+              </Text>
+              <Text fontWeight={600} mt={3}>
+                {"LEARN MORE>"}{" "}
+              </Text>
+            </Box>
+          </Box>
+        </Flex>
+
+        {/* Review section ended */}
+
+        {/* last div */}
+        <Box className="last">
+          <Text fontSize={"4xl"} fontFamily="ff-more-web-pro,serif">
+            Clever Things For Curious Humans™
+          </Text>
+          <Text w="60%" margin="auto">
+            There’s no better place to start the hunt for something new and
+            special. Begin on Indiegogo to find clever and unconventional things
+            that solve everyday problems large and small.
+          </Text>
+          <Box mt="30px">
+            <Button
+              mr={"20px"}
+              bg={"#e51075"}
+              borderRadius="none"
+              fontWeight={700}
+              fontSize={12}
+              color="white"
+              _hover={{
+                color: "black",
+                bg: "white",
+                border: "0.5px solid grey",
+              }}
+            >
+              SIGN UP NOW
+            </Button>
+            <Button
+              color={"#e51075"}
+              borderRadius="none"
+              bg="none"
+              fontWeight={400}
+              border={"1px solid black"}
+            >
+              LEARN MORE
+            </Button>
+          </Box>
+        </Box>
+
+        {/* last div */}
       </Box>
     </Box>
   );
@@ -259,7 +528,6 @@ const projectData = [
     no: "8",
   },
 ];
-
 
 const craouselData = [
   {
