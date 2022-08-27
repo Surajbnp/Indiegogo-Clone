@@ -3,7 +3,6 @@ import {
   Button,
   Checkbox,
   Flex,
-  FormControl,
   FormLabel,
   Heading,
   Input,
@@ -18,6 +17,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { login } from "../Redux/AuthReducer/actions";
+import { useToast } from '@chakra-ui/react'
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -25,22 +25,43 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const user= useSelector((state)=> state.authReducer)
+  const toastss = useToast()
   
-  const loginHandler = () => {
-    if (email && password) {
-      const params = {
-        email,
-        password,
-      };
+  const loginHandler = (e) => { 
+    
+    e.preventDefault()
 
-      dispatch(login(params))
+      dispatch(login(email, password))
       .then((r) => {
-        console.log(r)
-        navigate("/", { replace: true });
+
+        if(r.type === "LOGIN_SUCCESS")
+        {   
+          toastss({
+            title: 'Login Successful',
+            description: `Welcome`,
+            status: 'success',
+            duration: 7000,
+            isClosable: true,
+            position: "top"
+          })
+
+          navigate("/", { replace: true });
+        }
+        else{
+          toastss({
+            title: 'Login Failed',
+            description: `check your email or password`,
+            duration: 7000,
+            isClosable: true,
+            position: "top",
+            status:"error"
+          })
+        }
+       
       })
      
       
-    }
+    // }
   };
     console.log(user);
   return (
@@ -54,15 +75,16 @@ const Login = () => {
         </Stack>
         <Box rounded={"lg"} boxShadow={"lg"} p={8}>
           <Stack spacing={4}>
-            <FormControl id="email" isRequired>
+            <form>
+            <Box id="email">
               <FormLabel>email</FormLabel>
               <Input
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </FormControl>
-            <FormControl id="password" isRequired>
+            </Box>
+            <Box id="password">
               <FormLabel>Password</FormLabel>
               <InputGroup>
               <Input
@@ -72,7 +94,7 @@ const Login = () => {
               />
               
               </InputGroup>
-            </FormControl>
+            </Box>
             <Stack spacing={10}>
               <Stack
                 direction={{ base: "column", sm: "row" }}
@@ -88,7 +110,8 @@ const Login = () => {
                 _hover={{
                   bg: "#e51075",
                 }}
-                onClick={loginHandler}
+                onClick={loginHandler} 
+                type="submit"
               >
                 LOG IN
               </Button>
@@ -117,6 +140,7 @@ const Login = () => {
                 </RouterLink>
               </Text>
             </Stack>
+            </form>
           </Stack>
         </Box>
       </Stack>

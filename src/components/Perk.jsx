@@ -1,10 +1,10 @@
 import React from "react";
+import styles from "../pages/CssFolder/SinglePage.module.css"
 import {
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button,
@@ -24,17 +24,19 @@ function Perk() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button onClick={onOpen}>PEEK A PERK</Button>
+      <Button onClick={onOpen} colorScheme="orange">
+        PEEK A PERK
+      </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent p={5}>
           <ModalHeader>Back this project</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Box>
               <Text>Make a contribution</Text>
-              <Box padding={6}>
+              <Box className={styles.modalBox} >
                 <HStack>
                   <InputGroup>
                     <InputLeftElement
@@ -51,7 +53,9 @@ function Perk() {
                       fontSize="1.2em"
                     />
                   </InputGroup>
-                  <Button>CONTINUE</Button>
+                  <Button colorScheme="pink" variant="outline">
+                    CONTINUE
+                  </Button>
                 </HStack>
               </Box>
             </Box>

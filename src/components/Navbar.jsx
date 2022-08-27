@@ -3,10 +3,14 @@ import React ,{ useState} from 'react'
 import { NavLink } from 'react-router-dom';
 import { Dropdown } from './Dropdown';
 import styles from "../pages/CssFolder/Navbar.module.css";
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [drop, setDrop] = useState(true);
   const [page, setPage] = useState(false);
+  const userData = useSelector((state)=>state.authReducer) 
+
+  //console.log("navbar", userData.userInfo.firstname)
 
   const handledrop = () => {
     setDrop(!drop);
@@ -39,13 +43,19 @@ const Navbar = () => {
           <NavLink to="/start-a-campaign" className={styles.navitemright1}>
             Start a campaign
           </NavLink>
-        
-           <NavLink to="/login" className={styles.navitemright}>
-                Log in
-              </NavLink>
-              <NavLink to="/signup" className={styles.navitemright}>
-                Sign Up
-              </NavLink>
+
+
+          {
+            userData.isAuth === true ? <>{userData.userInfo.firstname}</> : <><NavLink to="/login" className={styles.navitemright}>
+            Log in
+          </NavLink>
+          <NavLink to="/signup" className={styles.navitemright}>
+            Sign Up
+          </NavLink>
+          </>
+          }
+           
+
        
         </div>
       </nav>
