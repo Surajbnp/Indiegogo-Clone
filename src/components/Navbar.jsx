@@ -39,6 +39,7 @@ const Navbar = () => {
           <NavLink to="/start-a-campaign" className={styles.navitemright1}>
             Start a campaign
           </NavLink>
+        
            <NavLink to="/login" className={styles.navitemright}>
                 Log in
               </NavLink>
