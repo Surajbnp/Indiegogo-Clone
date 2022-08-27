@@ -4,10 +4,13 @@ import { NavLink } from 'react-router-dom';
 import { Dropdown } from './Dropdown';
 import styles from "../pages/CssFolder/Navbar.module.css";
 import { useSelector } from 'react-redux';
+import { BsFillCaretDownFill, BsFillCaretUpFill } from 'react-icons/bs';
+import { Box } from '@chakra-ui/react';
 
 const Navbar = () => {
   const [drop, setDrop] = useState(true);
   const [page, setPage] = useState(false);
+  const [t , setT] = useState(true)
   const userData = useSelector((state)=>state.authReducer) 
 
   //console.log("navbar", userData.userInfo.firstname)
@@ -15,7 +18,14 @@ const Navbar = () => {
   const handledrop = () => {
     setDrop(!drop);
     setPage(!page);
+    setT(true)
   };
+
+  const handle = ({children}) => {
+    setT(!t)
+    setDrop(!drop);
+    setPage(!page);
+  }
  
   return (
     <div className={styles.nav1}>
@@ -24,8 +34,8 @@ const Navbar = () => {
           <NavLink to="/" className={styles.logo}>
             INDIEGOGO
           </NavLink>
-          <NavLink to="#" className={styles.navitemleft} style={{ paddingRight: "7px" }} onClick={handledrop}>
-            Explore {drop ? "down" : "up" }
+          <NavLink  to="#" className={styles.navflex }  onClick={handledrop}>
+            Explore {drop ? <BsFillCaretDownFill /> : <BsFillCaretUpFill /> }
           </NavLink>
           <NavLink to="/about-what-we-do" className={styles.navitemleft}>
             What we do
@@ -54,12 +64,9 @@ const Navbar = () => {
           </NavLink>
           </>
           }
-           
-
-       
         </div>
       </nav>
-      {page ? <Dropdown /> : null}
+      {page ? <Box onClick={handle}>{t ? <Dropdown /> : null}</Box> : null}
     </div>
   );
 };
