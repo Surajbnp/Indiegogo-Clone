@@ -1,10 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 
 import styles from "../pages/CssFolder/Navbar.module.css";
 export const Dropdown = () => {
+
+  const [set, setS] = useState(true)
+
+
+  const handle = () => {
+    setS(!set)
+  }
+
+  
+
   return (
-    <div style={{ marginBottom: "5px", borderTop: "1px solid black" }}>
+    
+    <div style={{ marginBottom: "5px", borderTop: "1px solid black" }} onClick={handle}>
       <div className={styles.drop1}>
         <div>
           <p className={styles.p21}>Explore All Project</p>
@@ -181,3 +192,4 @@ export const Dropdown = () => {
     </div>
   );
 };
+
