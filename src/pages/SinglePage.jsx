@@ -17,7 +17,6 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import { Progress } from "@chakra-ui/react";
-import React from "react";
 import {
   FaFacebookSquare,
   FaTwitter,
@@ -28,106 +27,96 @@ import FAQ from "../components/FAQ";
 import Perk from "../components/Perk";
 import styles from "./CssFolder/SinglePage.module.css";
 
-// import React, { useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { getAudioProjectData } from "../Redux/AppReducer/actions";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAudioProjectData } from "../Redux/AppReducer/actions";
 
 const SinglePage = () => {
-  // const { productId } = useParams();
-  // let product = useSelector((state) => state.product);
-  // const {
-  //   cover,
-  //   image1,
-  //   image2,
-  //   image3,
-  //   image4,
-  //   image5,
-  //   description1,
-  //   description2,
-  //   description3,
-  //   description4,
-  //   category,
-  //   title,
-  //   features,
-  //   status,
-  //   tag,
-  //   companyPic,
-  //   companyName,
-  //   companyAddress,
-  //   fund,
-  //   backers,
-  //   percentage,
-  //   daysLeft,
-  // } = product;
+  const { productId } = useParams();
+  let product = useSelector((state) => state.product);
+  const {
+    cover,
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    description1,
+    description2,
+    description3,
+    description4,
+    category,
+    title,
+    features,
+    status,
+    tag,
+    companyPic,
+    companyName,
+    companyAddress,
+    fund,
+    backers,
+    percentage,
+    daysLeft,
+  } = product;
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   if (productId && productId !== "") dispatch(getAudioProjectData(productId));
-  //   return () => {
-  //     dispatch(getAudioProjectData());
-  //   };
-  // }, [productId]);
+  useEffect(() => {
+    if (productId && productId !== "") dispatch(getAudioProjectData(productId));
+    return () => {
+      dispatch(getAudioProjectData());
+    };
+  }, [productId]);
 
   return (
     <div className={styles.cont}>
       <Box className={styles.topBox}>
         <Flex>
           <VStack className={styles.topStack}>
-            <Image
-              className={styles.img}
-              src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_273,w_273/ouzizrggdsrsrpuion5i.jpg"
-            ></Image>
+            <Image className={styles.img} src={cover}></Image>
           </VStack>
           <VStack align="flex-start" px={10}>
             <Text color="#088366" fontSize={18} fontWeight={600}>
-              category
+              {category}
             </Text>
-            <Heading fontWeight={600}>title</Heading>
+            <Heading fontWeight={600}>{title}</Heading>
             <Text fontSize={25} fontWeight={400}>
-              features
+              {features}
             </Text>
             <HStack>
               <Box className={styles.logo}>
-                <Image
-                  className={styles.img}
-                  src="https://c2.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,w_40,g_center,q_auto:best,dpr_1.3,f_auto,h_40/qkxbv9745ls5btkj0ncp"
-                ></Image>
+                <Image className={styles.img} src={companyPic}></Image>
               </Box>
               <VStack>
                 <Text fontSize={17} fontWeight={500}>
-                  companyName
+                  {companyName}
                 </Text>
                 <Text fontSize={17} fontWeight={400}>
-                  companyAddress
+                  {companyAddress}
                 </Text>
               </VStack>
             </HStack>
             <HStack>
               <span>
                 <Text fontSize={20} fontWeight={700}>
-                  fund
+                  {fund}
                 </Text>
               </span>
-              <span>
-                <Text fontSize={17} fontWeight={400}>
-                  INR
-                </Text>
-              </span>
+              
               <Spacer />
 
               <Text fontSize={17} fontWeight={400}>
-                backers
+                {backers}
               </Text>
             </HStack>
             <Progress colorScheme="green" size="sm" value={80} />
             <HStack>
               <Text fontSize={17} fontWeight={400}>
-                percentage
+                {percentage}
               </Text>
               <Text fontSize={17} fontWeight={400}>
-                daysLeft
+                {daysLeft}
               </Text>
             </HStack>
             <Flex>
@@ -165,22 +154,25 @@ const SinglePage = () => {
               <TabPanels>
                 <TabPanel>
                   <Box className={styles.imgBox}>
-                    <Image className={styles.img}></Image>
+                    <Image className={styles.img} src={image1}></Image>
                   </Box>
 
-                  <Text>Description1</Text>
+                  <Text>{description1}</Text>
                   <Box className={styles.imgBox}>
-                    <Image className={styles.img}></Image>
+                    <Image className={styles.img} src={image2}></Image>
                   </Box>
-                  <Text>Description2</Text>
+                  <Text>{description2}</Text>
                   <Box className={styles.imgBox}>
-                    <Image className={styles.img}></Image>
+                    <Image className={styles.img} src={image3}></Image>
                   </Box>
-                  <Text>Description3</Text>
+                  <Text>{description3}</Text>
                   <Box className={styles.imgBox}>
-                    <Image className={styles.img}></Image>
+                    <Image className={styles.img} src={image4}></Image>
                   </Box>
-                  <Text>Description4</Text>
+                  <Text>{description4}</Text>
+                  <Box className={styles.imgBox}>
+                    <Image className={styles.img} src={image5}></Image>
+                  </Box>
                 </TabPanel>
                 <TabPanel>
                   <FAQ />
