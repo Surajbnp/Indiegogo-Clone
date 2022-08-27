@@ -6,7 +6,7 @@ const register = (payload) => (dispatch) => {
   return axios
     .post("https://indiegogo-server.herokuapp.com/user", payload)
     .then((r) => {
-      dispatch({ type: types.REGISTER_SUCCESS, payload: r.data });
+     return  dispatch({ type: types.REGISTER_SUCCESS, payload: r.data });
     })
     .catch((e) => dispatch({ type: types.REGISTER_FAILURE, payload: e }));
 };
@@ -14,6 +14,7 @@ const register = (payload) => (dispatch) => {
 const login = (email, password) => (dispatch) => {
   dispatch({ type: types.LOGIN_REQUEST });
   return axios
+
     .get("https://indiegogo-server.herokuapp.com/user")
     .then((r) => { 
          
@@ -31,13 +32,11 @@ const login = (email, password) => (dispatch) => {
         return "Invalid email or password"
       }
       
+
     })
     .catch((e) => {
       dispatch({ type: types.LOGIN_FAILURE});
     });
 };
 
-
-
-
-export { login, register };
+export {login, register}

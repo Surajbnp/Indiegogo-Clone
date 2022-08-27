@@ -19,6 +19,7 @@ const authReducer = (state = initState, { type, payload }) =>{
         }
       }
 
+
       case LOGIN_SUCCESS : {
         return {
           ...state, 
@@ -36,6 +37,7 @@ const authReducer = (state = initState, { type, payload }) =>{
         }
       }
         
+
             default:
               return state;
           }
