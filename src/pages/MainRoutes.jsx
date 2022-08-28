@@ -5,7 +5,7 @@ import AudioPage from './AudioPage';
 import Login from './Login';
 import Signup from './Signup';
 import SinglePage from './SinglePage';
-import PaymentPage from './PaymentPage';
+import {PaymentPage} from './PaymentPage';
 import RequireAuth from '../components/RequireAuth'
 
 const MainRoutes = () => {
