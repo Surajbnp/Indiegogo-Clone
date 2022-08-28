@@ -6,6 +6,7 @@ import Login from './Login';
 import Signup from './Signup';
 import SinglePage from './SinglePage';
 import PaymentPage from './PaymentPage';
+import RequireAuth from '../components/RequireAuth'
 
 const MainRoutes = () => {
   return (
@@ -15,7 +16,11 @@ const MainRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/audio/:id" element={<SinglePage />} />
-      <Route path="/audio/:id/payment" element={<PaymentPage />} />
+      <Route path="/audio/:id/payment" element={
+        <RequireAuth>
+         <PaymentPage />
+        </RequireAuth>
+      } />
     </Routes>
   )
 };
