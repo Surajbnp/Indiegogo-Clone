@@ -2,8 +2,13 @@ import React from 'react'
 
 const PaymentPage = () => {
   return (
-    <div>PaymentPage</div>
+    <div>
+      
+      paymentpage
+    </div>
   )
 }
 
 export default PaymentPage
+
+paymentpage
