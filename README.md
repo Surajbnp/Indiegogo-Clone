@@ -28,7 +28,7 @@ So, we picked up one of the sections in which one can fund any project and creat
 ![Login](https://i.imgur.com/eEKV9VH.png) 
 
 ### Payment Page: 
-![payment](https://i.imgur.com/tUP6s1X.png) 
+![payment](https://i.imgur.com/rusMMW2.png) 
 
 ## Tech-Stack used : 
 - HTML
@@ -44,10 +44,10 @@ So, we picked up one of the sections in which one can fund any project and creat
 - json-server 
 
 ## Deployment Link: 
-
+ https://spotty-afterthought-4601.vercel.app/
 
 ## Video Presentation Link: 
-
+ https://drive.google.com/file/d/1uwMfztHsDtzQ4hS0xJCVQtfkI0dsRf-7/view
 
 ## Authors: 
 
@@ -64,8 +64,8 @@ So, we picked up one of the sections in which one can fund any project and creat
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rohit-kumar-6b1b421a9/) 
 
 4. Anirudha: 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)]()
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]() 
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Aniruddha8787)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anirudh87/) 
 
 5. Muskan Gupta: 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/mayra111)
@@ -76,6 +76,7 @@ If you have any feedback, any suggestion please reach out to us at
 surajguptabnp14c@gmail.com,
 shubhammrakhonde@gmail.com, 
 micgupta01@gmail.com,
+aniruddha87@live.com,
 rk6093720@gmail.com,
 
 
