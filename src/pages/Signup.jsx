@@ -19,7 +19,7 @@ import {
 
 } from "@chakra-ui/react";
 import { ViewIcon } from "@chakra-ui/icons";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { register } from "../Redux/AuthReducer/actions";
 
@@ -53,11 +53,24 @@ const Signup = () => {
   const [state, setState] = useReducer(reducer, initialState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation()
+  const coming = location.state?.from?.pathname 
+
+  
+  console.log("signup",coming)
 
   const signupHandle = () => {
    
-    dispatch(register(state)).then((r) => {
-      navigate("/login", { replace: true });
+    dispatch(register(state)).then((r) => { 
+
+      if(coming === undefined)
+      {
+        navigate("/")
+      }
+      else{
+        navigate("/login");
+      }
+      
     });
   };
 

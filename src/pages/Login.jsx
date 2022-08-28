@@ -15,9 +15,10 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { login } from "../Redux/AuthReducer/actions";
 import { useToast } from '@chakra-ui/react'
+
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,11 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const user= useSelector((state)=> state.authReducer)
   const toastss = useToast()
+  const location = useLocation() 
+  const comingFrom = location.state?.from?.pathname || "/" 
+  
+
+  console.log("login", comingFrom)
   
   const loginHandler = (e) => { 
     
@@ -44,8 +50,8 @@ const Login = () => {
             isClosable: true,
             position: "top"
           })
-
-          navigate("/", { replace: true });
+          
+          navigate(comingFrom, {replace: true});
         }
         else{
           toastss({

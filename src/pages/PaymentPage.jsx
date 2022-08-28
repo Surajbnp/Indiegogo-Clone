@@ -4,6 +4,7 @@ import { Flex } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { useNavigate } from 'react-router-dom';
 
+
 const PaymentPage = () => {
   const [value, setV] = useState(0);
   const [flag , setF] = useState(true)
@@ -138,4 +139,3 @@ const PaymentPage = () => {
   );
 };
 
-export default PaymentPage;

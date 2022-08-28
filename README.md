@@ -1,70 +1,82 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Indiegogo-Clone 
+This Readme contains details about my project. I have built a cloned website of Yoox.com with some of its basic functionalities. This overall project was a part of our construct week at Masai School. 
 
-## Available Scripts
+## About Project:
 
-In the project directory, you can run:
+Millions of people around the world visit Indiegogo to find clever and unconventional things that solve everyday problems large and small. By giving entrepreneurs everywhere a platform to launch new and groundbreaking products, Indiegogo helps surface innovations in tech, design, and much more, all before they go mainstream. 
 
-### `npm start`
+Indiegogo provides the opportunity to support entrepreneurs and new technology from the earliest stages of development. Indiegogo's crowdfunding campaigns are where new and groundbreaking products take flight, sometimes long before they hit mainstream availability. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+So, we picked up one of the sections in which one can fund any project and createed a userflow by cloning the Indiegogo's basic functionalities. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Pages and Features: 
 
-### `npm test`
+### Home : 
+![home](https://i.imgur.com/PAJIb2C.png) 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Audio Projects Page: 
+![Audio Projects Page](https://i.imgur.com/U6MVmXV.png) 
 
-### `npm run build`
+### Single Audio Project Page: 
+![home](https://i.imgur.com/AUeWQy6.png) 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Signup Page: 
+![Single Audio Project Page](https://i.imgur.com/zMvozsf.png) 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Login Page: 
+![Login](https://i.imgur.com/eEKV9VH.png) 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Payment Page: 
+![payment](https://i.imgur.com/tUP6s1X.png) 
 
-### `npm run eject`
+## Tech-Stack used : 
+- HTML
+- CSS 
+- JavaScript 
+- React
+- Redux 
+- Redux-thunk 
+- React-router-dom
+- Chakra-UI 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Server: 
+- json-server 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment Link: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Video Presentation Link: 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Authors: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Suraj Kumar Gupta (Team-Lead):
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Surajbnp)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/suraj-kumar-gupta-058191222/) 
 
-### Code Splitting
+2. Shubham Rakhonde:
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Shubham0442)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shubham-rakhonde-102964166/) 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Rohit Kumar: 
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/rk6093720)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rohit-kumar-6b1b421a9/) 
 
-### Analyzing the Bundle Size
+4. Anirudha: 
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)]()
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]() 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. Muskan Gupta: 
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/mayra111)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muskan-gupta01/) 
 
-### Making a Progressive Web App
+## Feedback: 
+If you have any feedback, any suggestion please reach out to us at 
+surajguptabnp14c@gmail.com,
+shubhammrakhonde@gmail.com, 
+micgupta01@gmail.com,
+rk6093720@gmail.com,
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
