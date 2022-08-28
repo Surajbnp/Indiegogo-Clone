@@ -1,6 +1,6 @@
 
 # Indiegogo-Clone 
-This Readme contains details about my project. I have built a cloned website of Indiegogo with some of its basic functionalities. This overall project was a part of our construct week at Masai School. 
+This Readme contains details about our project. I have built a cloned website of Indiegogo with some of its basic functionalities. This overall project was a part of our construct week at Masai School. 
 
 ## About Project:
 
