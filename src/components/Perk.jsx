@@ -19,9 +19,18 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import {useNavigate} from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 
 function Perk() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
+  const {id} = useParams()
+
+  const handle = () => {
+    navigate(`/audio/${id}/payment`)
+  }
+
   return (
     <>
       <Button onClick={onOpen} colorScheme="orange">
@@ -53,7 +62,7 @@ function Perk() {
                       fontSize="1.2em"
                     />
                   </InputGroup>
-                  <Button colorScheme="pink" variant="outline">
+                  <Button colorScheme="pink" variant="outline" onClick={handle}>
                     CONTINUE
                   </Button>
                 </HStack>
