@@ -11,4 +11,3 @@ const PaymentPage = () => {
 
 export default PaymentPage
 
-paymentpage
