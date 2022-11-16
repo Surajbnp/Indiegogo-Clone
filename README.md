@@ -44,7 +44,7 @@ So, we picked up one of the sections in which one can fund any project and creat
 - json-server 
 
 ## Deployment Link: 
- https://spotty-afterthought-4601.vercel.app/
+https://63749cfcbfcf1b25a51bea10--indiegogoweb.netlify.app
 
 ## Video Presentation Link: 
  https://drive.google.com/file/d/1uwMfztHsDtzQ4hS0xJCVQtfkI0dsRf-7/view
